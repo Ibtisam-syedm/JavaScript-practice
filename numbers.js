@@ -1,10 +1,9 @@
-function readNumber(){
-    while(true){
-        let a = prompt("Enter Number : ");
-        if (Object.is(a,"") || Object.is(a,null)) return null;
-        if(isFinite(a)) return a;
-        else alert("Invalid number");
+function getMaxSubSum(arr){
+    let tempSum = 0, maxSum = 0;
+    for(let value of arr){
+        tempSum += value;
+        maxSum = Math.max(maxSum,tempSum);
+        if (tempSum < 0) tempSum = 0;
     }
+    return maxSum;
 }
-
-alert("Your valid input : " + readNumber());
